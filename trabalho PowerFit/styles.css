@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #a8d4ff;
+  color: #333;
+}
+
+header {
+  background-color: #0053a6; /* Azul clarinho */
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centraliza o menu */
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity:   0.7;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1583454110551-21f2fa2e3546?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+  color: rgb(0, 0, 0);
+  padding: 100px 20px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0072ff;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #0072ff, #00aaff);
+}
+
+#resultado {
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e9f3ff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+li {
+  background: #e9f3ff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+li img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}

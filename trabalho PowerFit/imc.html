@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PowerFit - Calculadora de IMC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header>
+        <h1>PowerFit</h1>
+        <nav>
+          <a href="index.html">Início</a>
+          <a href="imc.html">IMC</a>
+          <a href="exercicios.html">Exercícios</a>
+          <a href="treinos.html">Treinos</a>
+        </nav>
+      </header>
+
+  <section id="imc">
+    <h2>Calculadora de IMC</h2>
+    <div class="input-group">
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" placeholder="Ex: 70" min="0" />
+    </div>
+    <div class="input-group">
+      <label for="altura">Altura (m):</label>
+      <input type="number" id="altura" placeholder="Ex: 1.75" min="0" step="0.01" />
+    </div>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+    <div id="resultado" role="alert"></div>
+    <div id="recomendacao" role="alert"></div>
+    <img src="https://images.unsplash.com/photo-1589927986089-358123789b8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGV4ZXJjaXRpc3RvJTIwZGVzYW5vbG8lMjBjb3J0ZXN8ZW58MHx8fHwxNjI2NDI2NDY0&ixlib=rb-1.2.1&q=80&w=1080" alt="Exercícios" style="width:100%; border-radius: 10px; margin-top: 20px;">
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PowerFit. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function calcularIMC() {
+      const peso = parseFloat(document.getElementById('peso').value);
+      const altura = parseFloat(document.getElementById('altura').value);
+      const resultado = document.getElementById('resultado');
+      const recomendacao = document.getElementById('recomendacao');
+
+      if (!peso || !altura || altura <= 0) {
+        resultado.innerHTML = "⚠️ Por favor, preencha os campos corretamente.";
+        recomendacao.innerHTML = "";
+        return;
+      }
+
+      const imc = peso / (altura * altura);
+      let classificacao = "";
+      let treino = "";
+
+      if (imc < 18.5) {
+        classificacao = "Abaixo do peso";
+        treino = "Recomendamos treinos de força e resistência, como musculação, para ganhar massa muscular.";
+      } else if (imc < 24.9) {
+        classificacao = "Peso normal";
+        treino = "Mantenha-se ativo com treinos de resistência e aeróbicos, como corrida ou ciclismo.";
+      } else if (imc < 29.9) {
+        classificacao = "Sobrepeso";
+        treino = "Foque em treinos de alta intensidade e aeróbicos para ajudar na perda de peso.";
+      } else if (imc < 34.9) {
+        classificacao = "Obesidade grau I";
+        treino = "Recomendamos treinos de baixo impacto, como caminhada e natação, combinados com exercícios de força.";
+      } else if (imc < 39.9) {
+        classificacao = "Obesidade grau II";
+        treino = "Considere treinos de baixo impacto e consulte um profissional para um plano personalizado.";
+      } else {
+        classificacao = "Obesidade grau III (mórbida)";
+        treino = "É importante buscar orientação médica e de um profissional de educação física para um plano seguro.";
+      }
+
+      resultado.innerHTML = `Seu IMC é <strong>${imc.toFixed(2)}</strong> - <strong>${classificacao}</strong>`;
+      recomendacao.innerHTML = `<strong>Recomendação:</strong> ${treino}`;
+    }
+  </script>
+</body>
+</html>
