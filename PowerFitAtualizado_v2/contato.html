@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerFit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bg-primary text-white p-3 mb-4">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="h3 m-0">PowerFit</h1>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="imc.html">IMC</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="exercicios.html">Exercícios</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="dietas.html">Dietas</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container my-4">
+
+<h2>Contato</h2>
+<form method="post" action="php/salvar_contato.php">
+  <div class="mb-3"><label>Nome:</label><input type="text" name="nome" class="form-control"></div>
+  <div class="mb-3"><label>Email:</label><input type="email" name="email" class="form-control"></div>
+  <div class="mb-3"><label>Mensagem:</label><textarea name="mensagem" class="form-control"></textarea></div>
+  <button class="btn btn-primary">Enviar</button>
+</form>
+
+</main>
+
+<footer class="bg-dark text-white text-center p-3 mt-4">
+  <p class="mb-0">© 2025 PowerFit - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
